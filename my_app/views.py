@@ -33,10 +33,10 @@ def index(request):
     if request.GET.get('add-city'):
       new_city = request.GET.get('add-city')
       
-      url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=6bf96d9da6f6593c143906beb74e6d73"
+      url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}"
       city = new_city
       try:
-        weather = requests.get(url.format(city)).json()  
+        weather = requests.get(url.format(city, your_API_key)).json()  
         types = ['cloud',  'thunderstorm','rain', 'clear', 'calm']
 
         context = {
