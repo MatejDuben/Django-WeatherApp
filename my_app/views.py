@@ -3,10 +3,10 @@ from django.http import HttpResponse
 import requests
 
 def index(request):
-  
-  url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=6bf96d9da6f6593c143906beb74e6d73"
+  your_API_key = ''   #here you need add your API KEY from openweathermap
+  url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}"
   city = 'Bratislava'
-  weather = requests.get(url.format(city)).json()
+  weather = requests.get(url.format(city, your_API_key)).json()
   #print(weather)
 
   types = ['cloud',  'thunderstorm','rain', 'clear', 'calm']
