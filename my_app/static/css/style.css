@@ -1,0 +1,147 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: Helvetica, sans-serif;
+}
+body{
+  background: linear-gradient(90.75deg, rgba(17, 198, 255, 0.32) 28.53%, rgba(18, 198, 255, 0) 69.64%);
+}
+
+.nav-bar{
+  width: 100%;
+  height: 100px;
+  background: rgba(93, 180, 242, 0.5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.nav-bar .title{
+  height: auto;
+  font-size: 48px;
+  color: #fff;
+  padding-top: 20px;
+  padding-left: 40px;
+  grid-column: 1;
+}
+.nav-bar .add-city-form{
+  
+  display: flex;
+  height: 50px;
+  width: 400px;
+  margin: auto;
+}
+.nav-bar .add-city-form #text{
+  width: 280px;
+  font-size: 28px;
+  background: none;
+  border: solid 1px #fff;
+  color: #fff;
+  transition: 0.4s;
+}
+.nav-bar .add-city-form #text::placeholder{
+  padding-left: 15px;
+  color: #fff;
+  font-size: 18px;
+}
+.nav-bar .add-city-form #btn{
+  background: #fff;
+  border: none;
+  width: 116px;
+  color: #3CACFF;
+  
+  font-size: 18px;
+  transition: 0.4s;
+
+}
+.nav-bar .add-city-form #btn:hover{
+  transition: 0.4s;
+  border: solid 1px #fff;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+
+.sec1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+/* Left side*/
+
+.left-side{
+
+  height: 80vh;
+  text-align: left;
+}
+
+.left-side .info{
+  color: #fff;
+  margin-top: 80px;
+  margin-left: 10%;
+}
+.left-side .info h1{
+  font-size: 79px;
+  margin-bottom: 20px;
+}
+.left-side .info h2{
+  margin-bottom: 10px;
+  font-size: 48px;
+}
+.more-info{
+  position: relative;
+  grid-column: 1;
+  bottom: 60px;
+  left: 10%;
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  background: #11C6FF;
+  text-align: center;
+  transition: 0.4s;
+}
+.more-info a{
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 11px;
+  font-size: 22px;
+  transition: 0.4s;
+}
+.more-info a:hover{
+  letter-spacing: 4px;
+  transition: 0.4s;
+}
+
+.left-side .info .icon{
+  display: flex;
+  flex-direction: row;
+}
+.left-side .info .icon img{
+  margin-left: 15px;
+  height: 64px;
+  width: 64px;
+}
+
+
+/* right side */
+.right-side{
+  grid-column: 2;
+  background: none;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 200px;
+}
+.right-side h2{
+  font-family: Helvetica, sans-serif;
+  font-size: 32px;
+  color: #797979;
+}
+.right-side img{
+  width: 300px;
+  height: 300px;
+}

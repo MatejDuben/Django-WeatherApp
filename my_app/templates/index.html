@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>MY weather</title>
+</head>
+<body>
+  <!--  <h2>Weather in <span style="color: rgb(255, 0, 64);">{{city}}</span> is <span style="color: rgb(255, 0, 64);">{{temperature}}</span> Deg Celsious</h2> -->
+  <header>
+    <nav class="nav-bar">
+      <h1 class="title">MY Weather</h1>
+
+      <form action="" method="GET" class="add-city-form">
+        
+        <input type="text" name="add-city" id="text" placeholder="Type a city here">
+        <input type="submit" name="city-btn" value="Submit" id="btn">
+
+      </form>
+    </nav>
+  </header>
+
+  <section class="sec1">
+
+  <div class="left-side">
+    
+    <div class="info">
+      {%if err_message%}
+      <h1 class="city">{{err_message.0}}</h1>
+      <p style="font-size: 22px; max-width: 520px;">{{err_message.1}}</p>
+      
+      {%else%}
+        <h1 class="city">{{city}}</h1>
+        <h2 class="temp">{{temp}} °C</h2>
+        <h2 class="feel-temp">feel like {{feelTemp}} °C</h2>
+        <h2 class="state">state: {{state}}</h2>
+        <div class="icon">
+          <h2>{{desc}}</h2>
+          <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="" srcset="">
+        </div>  
+
+      {%endif%}
+    </div>
+  </div>
+    
+
+    <div class="right-side">
+      <div class="info">
+        
+        {% if cloud in desc %}
+        <img src="../static/images/bezslnka.png" alt="" style="width: 500px; height: 500px;" srcset="">
+        <h2>{{desc}}</h2>
+        {% elif thunderstorm in desc %}
+        <img src="../static/images/burka.png" alt="" style="width: 500px; height: 500px;" srcset="">
+        <h2>{{desc}}</h2>
+        {% elif rain in desc %}
+        <img src="../static/images/dazd.png" alt="" style="width: 500px; height: 500px;" srcset="">
+        <h2>{{desc}}</h2>
+        {% elif clear_sky or calm in desc %}
+        <img src="../static/images/slnecno.png" alt="" style="width: 500px; height: 500px;" srcset="">
+        <h2>{{desc}}</h2>
+           
+        {% endif %}
+        
+
+      </div>
+    </div>
+
+    <div class="more-info">
+      <a type="submit"   href="https://openweathermap.org/find?q={{city}}" target="_blank">More</a>
+    </div>
+
+
+  </section>
+
+</body>
+</html>
